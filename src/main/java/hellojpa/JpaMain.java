@@ -42,11 +42,18 @@ public class JpaMain {
 //
 //            em.persist(member1);
 //            em.persist(member2);
+//
+//            Member member = em.find(Member.class, 150L);
+//            member.setName("ZZZZ");
 
-            Member member = em.find(Member.class, 150L);
-            member.setName("ZZZZ");
+//            System.out.println("========================");
 
-            System.out.println("========================");
+            Member member = new Member();
+            member.setId(3L);
+            member.setUsername("C");
+            member.setRoleType(RoleType.GUEST);
+
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e) {
