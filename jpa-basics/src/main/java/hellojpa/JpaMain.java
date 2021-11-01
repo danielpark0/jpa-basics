@@ -21,17 +21,11 @@ public class JpaMain {
 
             Member member = new Member();
             member.setUsername("hello");
+            member.setHomeAddress(new Address("city", "street", "10000"));
+            member.setWorkPeriod(new Period());
 
             em.persist(member);
 
-            em.flush();
-            em.clear();
-
-            //
-            //Member findMember = em.find(Member.class, member.getId());
-            Member findMember = em.getReference(Member.class, member.getId());
-            System.out.println("findMember.getId() = " + findMember.getId());
-            System.out.println("findMember.getUsername() = " + findMember.getUsername());
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
