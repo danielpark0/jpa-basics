@@ -46,6 +46,22 @@ public class Member {
         this.age = age;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public MemberType getType() {
+        return type;
+    }
+
+    public void setType(MemberType type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
